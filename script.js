@@ -3,7 +3,7 @@ $(document).ready( function(){
 
   var $ourOl = $('<ol>');
 
-  let listItemTexts = [`Change the <h1> to something cheeky`,
+  var listItemTexts = [`Change the <h1> to something cheeky`,
   'Inside the container for "Upcoming Traversals", create and insert an ordered list which corresponds to this one.',
       'Make all sad classes into happy ones.',
   "Make the annoying popup link point instead to http://www.cashcats.biz.",
@@ -20,8 +20,21 @@ $(document).ready( function(){
   $('.info-box').append($ourOl);
 
   $('.sad').removeClass('sad').addClass('happy');
-  
-  
 
+  $('#annoying-popup a').attr('href', 'http://cashcats.biz');
+
+  $('#annoying-popup')
+    .css('right', '0px')
+    .css('top',  '+=30px');
+
+  $('.suggested-topics ul')
+   .children()
+   .filter( function() { return $(this).text() === '...';} )
+   .text("Admirable Cogent Collisions");
+
+  $('input[type ="text"]').remove();
+
+  $('<textarea>')
+   .attr('placeholder', 'Tell me a story!')
+   .insertBefore( $('input[type="submit"]'));
 })
-
